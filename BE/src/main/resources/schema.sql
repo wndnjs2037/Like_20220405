@@ -132,3 +132,13 @@ CREATE TABLE images
     FOREIGN KEY(post_id) REFERENCES post(id),
     FOREIGN KEY(user_id) REFERENCES users(id)
 );
+
+CREATE TABLE revogel
+(
+  id BIGINT NOT NULL AUTO_INCREMENT, -- revogel 기본 id
+  revogel_post_id BIGINT, -- revogel된 post의 id
+  user_id BIGINT NOT NULL, -- revogel한 user의 id
+  PRIMARY KEY(id),
+  FOREIGN KEY(revogel_post_id) REFERENCES post(id),
+  FOREIGN KEY(user_id) REFERENCES users(id)
+);
