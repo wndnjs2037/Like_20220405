@@ -19,4 +19,7 @@ public interface PostRepository {
     Integer noVisiblePost(@Param("id") long id);
     Integer updateCountComment(@Param("id") long id);
     List<Post> findByAuthor(@Param("author") long author);
+    List<Post> findAllPost();
+    Integer updateLike(@Param("postId") long postId, @Param("count") int count);
+
 }

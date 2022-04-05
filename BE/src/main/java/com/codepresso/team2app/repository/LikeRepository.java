@@ -8,5 +8,9 @@ import org.apache.ibatis.annotations.Param;
 public interface LikeRepository {
     Integer countSave(@Param("Like") Like like);
 
+    Like selectOne(@Param("Like") Like like);
+    Integer delete(@Param("Like") Like like);
+    long countByArticleId(@Param("articleId") long articleId);
+
 
 }

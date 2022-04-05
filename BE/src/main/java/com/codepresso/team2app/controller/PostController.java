@@ -67,9 +67,21 @@ public class PostController {
         return "success";
     }
 
+//    @GetMapping("/post/all")
+//    public List<PostResponseDto> getAllPostList(@RequestParam("id") Long id) {
+//        List<Post> postList = postService.getAllPost(id);
+//        List<PostResponseDto> postResponseDtos = new ArrayList<>();
+//        for(Post post : postList){
+//            postResponseDtos.add(new PostResponseDto(post));
+//        }
+//
+//        return postResponseDtos;
+//    }
+
+
     @GetMapping("/post/all")
-    public List<PostResponseDto> getAllPostList(@RequestParam("id") Long id) {
-        List<Post> postList = postService.getAllPost(id);
+    public List<PostResponseDto> getAllPostList() {
+        List<Post> postList = postService.getAllPost();
         List<PostResponseDto> postResponseDtos = new ArrayList<>();
         for(Post post : postList){
             postResponseDtos.add(new PostResponseDto(post));

@@ -69,6 +69,7 @@ CREATE TABLE likes(
     id BIGINT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     user_id BIGINT NOT NULL,
     article_id BIGINT NOT NULL,
+    UNIQUE KEY ukey_user_id_article_id (user_id, article_id), -- 유니크 키 지정
     FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY(article_id) REFERENCES post(id) ON DELETE CASCADE
 );

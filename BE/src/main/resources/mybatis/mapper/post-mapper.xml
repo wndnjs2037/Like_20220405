@@ -33,9 +33,11 @@
         WHERE author = #{author};
     </select>
 
-    <update id="updateLike"> <!-- like를 세기 위함 -->
-        update post set count_liked = count_liked+ 1
-        where id = #{id}; <!-- # -> 입력받는 값, 안붙이면 쿼리문의 데이터 -->
+    <update id="updateLike"> <!-- like를 세기 위한 함수 -->
+<!--        update post set count_liked = count_liked+ 1-->
+<!--        where id = #{id}; &lt;!&ndash; # -> 입력받는 값, 안붙이면 쿼리문의 데이터 &ndash;&gt;-->
+            update post set count_liked = count_liked + #{count}
+            where id = #{postId};
     </update>
 
     <update id="updateContent">

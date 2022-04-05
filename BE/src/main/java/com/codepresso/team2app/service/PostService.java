@@ -45,6 +45,10 @@ public class PostService {
         return postRepository.findAllPost(id);
     }
 
+    public List<Post> getAllPost() {
+        return postRepository.findAllPost();
+    }
+
     public boolean countSave(Like like) { //insert 쿼리
         Integer result = likeRepository.countSave(like);
         return result == 1; //True 반환
